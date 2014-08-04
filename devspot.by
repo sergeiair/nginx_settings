@@ -18,9 +18,15 @@ server {
 		proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
 		proxy_set_header Host $http_host;
 		proxy_set_header X-Nginx-Proxy true;
-
 		proxy_pass http://app_devspot/;
 		proxy_redirect off;
+		
+		add_header Access-Control-Allow-Origin "*";
+		add_header Access-Control-Allow-Methods "GET, POST,  OPTIONS";
+		add_header Access-Control-Allow-Credentials "true"; 
+		add_header Content-Length 0;
+		add_header Content-Type text/plain;
+		return 200;
 	}
 	error_page 404 /404.html;
 	error_page 500 502 503 504 /50x.html;
