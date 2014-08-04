@@ -10,9 +10,8 @@ upstream app_devspot {
 
 server {
 	listen 80;
-	root /var/www/devspot;
-	index index.html;
-	server_name devspot.by devspot;
+	root /var/www/devspot/public;
+	server_name devspot.by;
 	location / {
 		proxy_set_header X-Real-IP $remote_addr;
 		proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
