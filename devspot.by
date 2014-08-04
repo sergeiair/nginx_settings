@@ -10,7 +10,7 @@ upstream app_devspot {
 
 server {
 	listen 80;
-	root /var/www/devspot/public;
+	root /var/www/devspot;
 	index index.html;
 	server_name devspot.by devspot;
 	location / {
